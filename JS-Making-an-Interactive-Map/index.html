@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation Project</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  />
+    <script src="app.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ ></script>
+    <style>
+    #map { 
+        height: 700px;
+        background-color: #ccc;
+    }
+    #map::before{
+        content: 'LOADING';
+        font-size: 3em;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        margin-top: 3em;
+    }
+    .leaflet-popup-content-wrapper {
+        width: 100%;
+    }
+    #panel {
+      height: 100%;
+      width: null;
+      background-color: rgb(136, 30, 30);
+      position: fixed;
+      z-index: 1;
+      overflow-x: visible;
+      transition: all .2s ease-out;
+    }
+
+    .open {
+      width: 250px;
+    }
+
+    /* Styling for place details */
+    .hero {
+      width: 100%;
+      height: auto;
+      max-height: 166px;
+      display: block;
+    }
+
+    .place,
+    p {
+      font-family: 'open sans', arial, sans-serif;
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    .details {
+      color: darkslategrey;
+    }
+
+    a {
+      text-decoration: none;
+      color: cadetblue;
+    }
+  </style>
+</head>
+<body>
+    <form>
+        <select id="business">
+            <option value="restaurant">Restaurants</option>
+            <option value="coffee">Coffee Shops</option>
+            <option value="hotel">Hotels</option>
+            <option value="market">Markets</option>
+        </select>
+        <button id="submit">Submit</button>
+    </form>
+    <div id="map"></div>
+</body>
+</html>
